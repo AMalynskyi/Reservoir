@@ -63,6 +63,8 @@ public class WaterServiceTest {
 
         assertThat(waterService.validateLandScapeInput("1,2,1000000000000000"))
                 .containsExactly(String.format(INCORRECT_INPUT_RANGE, "1000000000000000"));
+        assertThat(waterService.validateLandScapeInput("2,1,-5,6"))
+                .containsExactly(String.format(INCORRECT_INPUT_RANGE, "-5"));
 
         assertThat(waterService.validateLandScapeInput(wideInput.toString()))
                 .containsExactly(INCORRECT_INPUT_SIZE);

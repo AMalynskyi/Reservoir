@@ -44,7 +44,7 @@ public class WaterService {
             result.add(String.format(INCORRECT_INPUT_MSG, wrongInput));
 
         wrongInput = Arrays.stream(input)
-                        .filter(numb -> numb.matches("\\d+")
+                        .filter(numb -> numb.matches("-?\\d+")
                                 && (numb.length() > String.valueOf(MAX_VALUE).length() ||
                                 Integer.valueOf(numb) < 0 || Integer.valueOf(numb) > MAX_VALUE))
                         .collect(Collectors.joining(","));
